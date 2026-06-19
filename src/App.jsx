@@ -88,7 +88,7 @@ function normalizeBook(item) {
   };
 }
 async function searchBooks(q) {
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(q)}&maxResults=12&printType=books`;
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(q)}&maxResults=12&printType=books&key=AIzaSyAHmjtQPPeqd5--h_DSbkq51oVNnZnMhLA`;
   const r = await fetch(url);
   if (!r.ok) throw new Error("search failed");
   const d = await r.json();
