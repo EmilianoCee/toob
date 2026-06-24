@@ -1,0 +1,225 @@
+/* TOOB styles — design tokens + vintage override.
+   Fonts (Hanken Grotesk, Permanent Marker, Space Mono) load via Google Fonts in index.html. */
+
+/* ============================================================
+   TOOB Design System — global entry point.
+   Consumers link THIS file. Keep it @imports only.
+   ============================================================ */
+
+/* ============================================================
+   TOOB — Fonts
+   Hand-drawn marker headers + clean industrial body + mono codes.
+   NOTE: the real logo lettering is hand-scrawled (not a typeface).
+   These Google Fonts are the closest available stand-ins — see
+   readme.md "Visual Foundations". Swap if real fonts surface.
+   ============================================================ */
+
+/* Permanent Marker  -> hand-drawn TOOB lettering, display headers
+   Hanken Grotesk    -> body, UI labels, buttons (clean grotesque)
+   Space Mono        -> room codes, metadata, stamps, technical bits */
+
+/* ============================================================
+   TOOB — Colors
+   Two pillars: brushed-metal STEEL + hand-drawn MARKER INK,
+   with a hot MAGENTA accent borrowed from the bowling ball.
+   ============================================================ */
+
+:root {
+  /* ---- Steel scale (cool brushed metal) -------------------- */
+  --steel-0:  #ffffff;   /* chrome glint */
+  --steel-50: #f1f3f5;   /* polished highlight */
+  --steel-100:#dfe3e7;
+  --steel-200:#c4cace;   /* tube body light */
+  --steel-300:#a6adb2;   /* tube body mid */
+  --steel-400:#868d93;
+  --steel-500:#6a7176;   /* shadow band */
+  --steel-600:#4e5458;
+  --steel-700:#373b3e;   /* gunmetal */
+  --steel-800:#26292b;
+  --steel-900:#171819;   /* near-black tube bore */
+
+  /* ---- Marker ink (the MS-Paint hand-drawn lettering) ------ */
+  --ink-brown:      #6f4421;   /* the tBook brown marker */
+  --ink-brown-soft: #8a5e34;
+  --ink-black:      #1c1a17;   /* the Esports black marker */
+
+  /* ---- Magenta (bowling-ball accent) ----------------------- */
+  --magenta:      #d12fbb;
+  --magenta-dark: #a8208f;
+  --magenta-soft: #f0a8e4;
+
+  /* ---- Canvas / paper -------------------------------------- */
+  --paper:      #f6f5f2;   /* MS-Paint off-white canvas */
+  --paper-warm: #efece5;
+
+  /* ---- Semantic surfaces ----------------------------------- */
+  --surface-app:    var(--steel-700);   /* the workbench backdrop */
+  --surface-app-2:  var(--steel-800);
+  --surface-card:   var(--paper);       /* a card = a paper tag */
+  --surface-inset:  var(--steel-50);    /* inputs, wells */
+  --surface-metal:  var(--steel-200);   /* a steel panel */
+
+  /* ---- Semantic text --------------------------------------- */
+  --text-strong:  var(--ink-black);     /* on paper/metal */
+  --text-body:    #34302a;
+  --text-soft:    #756a5c;              /* captions on paper */
+  --text-on-dark: var(--steel-50);      /* on the steel backdrop */
+  --text-on-dark-soft: #aab0b4;
+
+  /* ---- Brand / interactive --------------------------------- */
+  --brand:        var(--ink-brown);     /* primary brand ink */
+  --brand-press:  #573418;
+  --accent:       var(--magenta);       /* highlight / winner */
+  --accent-press: var(--magenta-dark);
+
+  /* ---- Lines & edges --------------------------------------- */
+  --line:         #cdc6b8;              /* hairline on paper */
+  --line-strong:  #b3aa96;
+  --edge-metal:   #5b6166;              /* seam between steel panels */
+
+  /* ---- Status ---------------------------------------------- */
+  --ok:    #3f7d4e;
+  --warn:  #c98a1e;
+  --danger:#b23a2e;   /* the rubber-stamp red, kept for alerts */
+}
+
+/* ============================================================
+   TOOB — Typography tokens
+   ============================================================ */
+
+:root {
+  /* ---- Families ------------------------------------------- */
+  --font-marker: 'Permanent Marker', 'Comic Sans MS', cursive;  /* hand-drawn display */
+  --font-sans:   'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono:   'Space Mono', 'Courier New', ui-monospace, monospace;
+
+  /* ---- Type scale (rem) ----------------------------------- */
+  --fs-xs:   0.75rem;   /* 12 — micro labels */
+  --fs-sm:   0.875rem;  /* 14 — captions, meta */
+  --fs-base: 1rem;      /* 16 — body */
+  --fs-md:   1.125rem;  /* 18 */
+  --fs-lg:   1.375rem;  /* 22 — card titles */
+  --fs-xl:   1.75rem;   /* 28 — section heads */
+  --fs-2xl:  2.5rem;    /* 40 — page heads */
+  --fs-3xl:  3.5rem;    /* 56 — hero / logo */
+
+  /* ---- Weights -------------------------------------------- */
+  --fw-normal: 400;  /* @kind font */
+  --fw-medium: 500;  /* @kind font */
+  --fw-semi:   600;  /* @kind font */
+  --fw-bold:   700;  /* @kind font */
+  --fw-black:  800;  /* @kind font */
+
+  /* ---- Line heights --------------------------------------- */
+  --lh-tight: 1.05;  /* @kind font */
+  --lh-snug:  1.25;  /* @kind font */
+  --lh-body:  1.55;  /* @kind font */
+
+  /* ---- Tracking ------------------------------------------- */
+  --ls-label: 0.18em;   /* @kind font */
+  --ls-wide:  0.3em;    /* @kind font */
+}
+
+/* ============================================================
+   TOOB — Spacing, radii, shadows, metal effects
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) --------------------------- */
+  --sp-1:  0.25rem;   /* 4  */
+  --sp-2:  0.5rem;    /* 8  */
+  --sp-3:  0.75rem;   /* 12 */
+  --sp-4:  1rem;      /* 16 */
+  --sp-5:  1.5rem;    /* 24 */
+  --sp-6:  2rem;      /* 32 */
+  --sp-7:  3rem;      /* 48 */
+  --sp-8:  4rem;      /* 64 */
+
+  /* ---- Radii — tubes are round; paper tags barely so ------ */
+  --r-xs:    3px;     /* paper cards, inputs */
+  --r-sm:    6px;
+  --r-md:    10px;
+  --r-pill:  999px;   /* tube caps, chips, the tube-end motif */
+
+  /* ---- Elevation: paper tag on a steel workbench ---------- */
+  --shadow-card:  0 1px 0 rgba(255,255,255,.5) inset, 0 6px 16px rgba(0,0,0,.28);
+  --shadow-pop:   0 18px 48px rgba(0,0,0,.42);
+  --shadow-press: 0 1px 3px rgba(0,0,0,.3) inset;
+
+  /* ---- Metal gradients (reusable in components) ----------- */
+  /* a horizontal brushed-steel tube body, light from top */
+  --grad-tube: linear-gradient(180deg,
+      #d9dde0 0%, #f1f3f5 14%, #c4cace 40%,
+      #9aa1a6 62%, #c9ced2 84%, #7e858a 100%);  /* @kind color */
+  /* a steel panel / button face */
+  --grad-steel: linear-gradient(180deg, #eef0f2 0%, #cfd4d8 48%, #aeb4b9 100%);  /* @kind color */
+  --grad-steel-press: linear-gradient(180deg, #aeb4b9 0%, #cfd4d8 60%, #e6e9eb 100%);  /* @kind color */
+  /* the dark workbench backdrop */
+  --grad-bench: linear-gradient(180deg, #3c4044 0%, #2b2e31 100%);  /* @kind color */
+
+  /* ---- Hairlines ------------------------------------------ */
+  --bw: 1px;  /* @kind spacing */
+  --bw-2: 2px;  /* @kind spacing */
+  --bw-marker: 2.5px;  /* @kind spacing */
+}
+
+  /* ============================================================
+     VINTAGE OVERRIDE — old paper · leather hardcovers · wood frames.
+     Remaps the steel-themed tokens to a warm tan/brown library
+     palette. Tweaks mutate the few vars marked below at runtime.
+     ============================================================ */
+  :root {
+    /* steel scale → warm taupe / parchment */
+    --steel-0:#fffdf8; --steel-50:#f4ead4; --steel-100:#e8d9bb; --steel-200:#d8c4a0;
+    --steel-300:#c2a87f; --steel-400:#a88a63; --steel-500:#8a6e4c; --steel-600:#6b5238;
+    --steel-700:#4a3321; --steel-800:#38271a; --steel-900:#261a10;
+
+    --ink-black:#2a2018;
+
+    /* accent family (was magenta) → antique brass — RUNTIME-TWEAKED */
+    --magenta:#a87c34; --magenta-dark:#7d5a22; --magenta-soft:#dcbd80;
+
+    --paper:#f4ead4; --paper-warm:#ece0c6;
+
+    --surface-card:#f4ead4;
+    --surface-inset:#ece0c6;
+    --surface-metal:#d8c4a0;
+
+    --text-strong:#2a2018;
+    --text-body:#473726;
+    --text-soft:#8a7457;
+    --text-on-dark:#f4ead4;
+    --text-on-dark-soft:#cbb083;
+
+    --brand:#7a4f29; --brand-press:#5a3819;
+    --accent:var(--magenta); --accent-press:var(--magenta-dark);
+
+    --line:#dac9a8; --line-strong:#c4ad86; --edge-metal:#6b5238;
+
+    /* gradients — RUNTIME-TWEAKED (bench + wood) */
+    --grad-bench: linear-gradient(165deg,#4a3321 0%,#2e2014 100%);   /* the desk/backdrop */
+    --grad-wood:  linear-gradient(180deg,#5a3e25 0%,#382716 100%);   /* header / spine band */
+    --grad-steel: linear-gradient(180deg,#efe1c2 0%,#dcc59b 48%,#c7ad7f 100%);       /* aged brass panel */
+    --grad-steel-press: linear-gradient(180deg,#c7ad7f 0%,#dcc59b 60%,#efe1c2 100%);
+    --grad-tube: linear-gradient(180deg,#8a5e34,#6f4421);
+  }
+
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--grad-bench); }
+  #root { min-height: 100vh; }
+  .ico svg { width: 1em; height: 1em; display: block; stroke-width: 2; }
+  *:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--steel-500); border-radius: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+
+  /* paper grain — toggled by the Tweaks panel */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0; transition: opacity .25s ease; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  html[data-grain="on"] body::before { opacity: .22; }
+
+  @keyframes toob-stamp { 0%{transform:rotate(-11deg) scale(2.2);opacity:0} 60%{transform:rotate(-11deg) scale(.92);opacity:1} 100%{transform:rotate(-11deg) scale(1)} }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
