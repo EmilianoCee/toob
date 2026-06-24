@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --toob-bench: linear-gradient(165deg, #3a2c1c 0%, #211610 100%);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--toob-bench);
+  font-family: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* tint Tailwind's focus ring + native focus to the forest accent */
+* { --tw-ring-color: rgba(168, 192, 138, 0.7); }
+*:focus-visible { outline: 2px solid #a8c08a; outline-offset: 2px; }
+input::placeholder, textarea::placeholder { color: #8a745799; }
+input[type="datetime-local"]::-webkit-calendar-picker-indicator { filter: invert(0.25) sepia(0.4); }
+
+/* rubber-stamp press-in */
+@keyframes toob-stamp {
+  0%   { transform: rotate(-11deg) scale(2.4); opacity: 0; }
+  60%  { transform: rotate(-11deg) scale(0.9); opacity: 1; }
+  100% { transform: rotate(-11deg) scale(1); }
+}
+.stamp-press { animation: toob-stamp 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #c4ad86; border-radius: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
