@@ -1120,7 +1120,6 @@ export default function App() {
       <div style={{ position: "relative", zIndex: 2 }}>
         {LOCAL_ONLY && (
           <div className="text-center text-[11px] py-1.5 px-4" style={{ background: `${C.brass}`, color: C.cream, fontFamily: MONO }}>
-            Local mode — rooms are saved in this browser and sync across its tabs, but not across devices yet. See the README to wire a shared backend.
           </div>
         )}
 
