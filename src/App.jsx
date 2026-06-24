@@ -122,7 +122,8 @@ function normalizeBook(item) {
 
 // Google Books key comes from .env (VITE_GOOGLE_BOOKS_API_KEY). Optional —
 // the API works without one, just at a lower quota.
-const GBOOKS_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY || "";
+const GBOOKS_KEY = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY || "AIzaSyAHmjtQPPeqd5--h_DSbkq51oVNnZnMhLA";
+
 async function searchBooks(q) {
   const params = new URLSearchParams({ q, maxResults: "12", printType: "books" });
   if (GBOOKS_KEY) params.set("key", GBOOKS_KEY);
@@ -516,11 +517,11 @@ function SignIn({ meta, users, onSignIn, onLeave }) {
       </div>
       <div className="p-5 rounded-sm space-y-4" style={{ background: C.paper, border: `1px solid ${C.line}`, boxShadow: SHADOW_CARD }}>
         <Field label="Your name">
-          <input value={name} onChange={(e) => { setName(e.target.value); setErr(""); }} placeholder="what should the club call you?"
+          <input value={name} onChange={(e) => { setName(e.target.value); setErr(""); }} placeholder="name"
             className="w-full px-3 py-2.5 outline-none focus:ring-2" style={inputStyle} />
         </Field>
         <Field label={locked ? "Password (required for this name)" : "Password (optional)"}
-          hint={locked ? undefined : "Set one to keep your name yours. Leave blank to skip — the room code already gates the room."}>
+          hint={locked ? undefined : ""}>
           <div className="relative">
             <input type="password" value={pass} onChange={(e) => { setPass(e.target.value); setErr(""); }}
               placeholder={locked ? "enter your password" : "optional"}
